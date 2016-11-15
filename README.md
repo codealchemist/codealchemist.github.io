@@ -8,7 +8,7 @@ This is one tiny web playground.
 
 ### ThreeJS + React
 
-The current version explores using ThreeJS with React.
+The current version explores using [ThreeJS](https://threejs.org) with [React](https://facebook.github.io/react/).
 
 It displays a simple cube which rotates on the X axis.
 
