@@ -20,6 +20,18 @@ The cube can be rotated by dragging it or by using the arrow keys.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+### Development
+
+`npm start`
+
+### Build
+
+`npm run build`
+
+### Test
+
+`npm test`
+
 ### Exploring
 
 If you feel like cloning this repo and playing with it, please, be my guest!
