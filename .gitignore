@@ -6,8 +6,8 @@ node_modules
 # testing
 coverage
 
-# production
-build
+# production / added to support deploying to heroku
+# build
 
 # misc
 .DS_Store
