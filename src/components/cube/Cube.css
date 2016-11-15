@@ -1,0 +1,23 @@
+#cube {
+  background: #eee;
+  border-top: 5px solid black;
+}
+
+#info {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  width: 100%;
+}
+
+.info.fade-in-enter {
+  animation: 1s fadeIn ease;
+  /*background: yellow;
+  opacity: 0.01;*/
+}
+
+.info.fade-in-leave {
+  animation: 1s fadeOut ease;
+  /*background: black;*/
+  /*opacity: 1;*/
+}

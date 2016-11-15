@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+  background: transparent;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+a:hover {
+  background: #1dcaff;
+}
