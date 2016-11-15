@@ -14,6 +14,11 @@ app.use(compression())
 // parse application/json
 app.use(bodyParser.json())
 
+// custom routes
+app.get('/screenshot', (req, res) => {
+  res.sendFile(__dirname + '/screenshot.png')
+})
+
 // static routes
 app.use(express.static(__dirname + '/build'))
 
