@@ -18,6 +18,9 @@ app.use(bodyParser.json())
 app.get('/screenshot', (req, res) => {
   res.sendFile(__dirname + '/screenshot.png')
 })
+app.get('/screenshot.png', (req, res) => {
+  res.sendFile(__dirname + '/screenshot.png')
+})
 
 // static routes
 app.use(express.static(__dirname + '/build'))
