@@ -4,6 +4,8 @@ import './Cube.css'
 import CubeEvents from './CubeEvents.js'
 import Info from '../info/Info.js'
 
+const StereoEffect = require('three-stereo-effect')(THREE)
+
 // images
 import imgMe from './me.jpg'
 import imgLinkedin from './linkedin.png'
@@ -20,7 +22,6 @@ export default class Cube extends Component {
     this.faceLength = this.rotationLength / this.totalFaces
     this.targetRotation = 0;
     this.state = {time: new Date()}
-    this.imgUrl = 'http://192.168.0.89:8080'
     this.texturesToLoad = [
       {id: 'me', url: imgMe},
       {id: 'linkedin', url: imgLinkedin},
@@ -118,6 +119,10 @@ export default class Cube extends Component {
     this.renderer.setSize( window.innerWidth, window.innerHeight );
     this.container = document.getElementById('cube');
     this.container.appendChild( this.renderer.domElement );
+
+    this.stereoEffect = new StereoEffect(this.renderer)
+    this.stereoEffect.eyeSeparation = -8;
+    this.stereoEffect.setSize( window.innerWidth, window.innerHeight )
   }
 
   onTexturesLoaded (textures) {
@@ -159,6 +164,7 @@ export default class Cube extends Component {
   		this.camera.aspect = window.innerWidth / window.innerHeight;
   		this.camera.updateProjectionMatrix();
   		this.renderer.setSize( window.innerWidth, window.innerHeight );
+      this.stereoEffect.setSize( window.innerWidth, window.innerHeight )
     }
   }
 
@@ -206,7 +212,8 @@ export default class Cube extends Component {
 
 	renderScene () {
 		this.plane.rotation.y = this.cube.rotation.y += ( this.targetRotation - this.cube.rotation.y ) * 0.05;
-		this.renderer.render( this.scene, this.camera );
+		// this.renderer.render( this.scene, this.camera );
+    this.stereoEffect.render(this.scene, this.camera)
 
     // refresh react view / debounce
     if (!this.refreshTimer && this.didFaceChanged()) {
