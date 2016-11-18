@@ -20,7 +20,6 @@ export default class Cube extends Component {
     this.faceLength = this.rotationLength / this.totalFaces
     this.targetRotation = 0;
     this.state = {time: new Date()}
-    this.imgUrl = 'http://192.168.0.89:8080'
     this.texturesToLoad = [
       {id: 'me', url: imgMe},
       {id: 'linkedin', url: imgLinkedin},
