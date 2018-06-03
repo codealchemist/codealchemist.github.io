@@ -15,8 +15,11 @@ export default class InfoGithub extends Component {
 
           <p>
             I enjoy sharing code!<br />
-            I also collaborate with really cool open source projects
-            like <a href="https://webtorrent.io/desktop">WebTorrent Desktop</a><br />
+            I also collaborate with really cool open source projects like
+            <a href="https://webtorrent.io/desktop" target="_blank">
+              WebTorrent Desktop
+            </a>
+            <br />
           </p>
         </div>
       </div>
