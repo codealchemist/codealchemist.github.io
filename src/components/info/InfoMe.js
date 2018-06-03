@@ -10,7 +10,7 @@ export default class InfoMe extends Component {
           <h3>I love being a <em>Web Alchemist</em> ;)</h3>
 
           <p>
-            Hey! Nice you meet you!<br />
+            Hey! Nice to meet you!<br />
           </p>
         </div>
       </div>
