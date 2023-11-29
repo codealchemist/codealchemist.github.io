@@ -1,6 +1,6 @@
 {
   "name": "albertomiranda",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.7.0"
@@ -21,6 +21,6 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "7.*"
+    "node": "18"
   }
 }

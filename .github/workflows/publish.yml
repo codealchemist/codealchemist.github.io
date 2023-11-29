@@ -1,9 +1,19 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 permissions:
-  contents: write
+  pages: write
+  contents: read
+  id-token: write
+
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -14,7 +24,17 @@ jobs:
           npm ci
           npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
+      - name: Create required folder
+        run: mv build _site
+
+      # - name: Fix permissions
+      #   run: |
+      #     chmod -v -R +rX "_site/" | while read line; do
+      #       echo "::warning title=Invalid file permissions automatically fixed::$line"
+      #     done
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
