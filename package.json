@@ -21,6 +21,6 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "7.*"
+    "node": "18"
   }
 }
