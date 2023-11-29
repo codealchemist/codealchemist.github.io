@@ -23,6 +23,9 @@ jobs:
           npm ci
           npm run build
 
+      - name: Create required folder
+        run: mv build _site
+
       # - name: Fix permissions
       #   run: |
       #     chmod -v -R +rX "build/" | while read line; do
