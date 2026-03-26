@@ -2,7 +2,6 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.169/build/three.mod
 
 const canvas = document.getElementById('scene')
 const themeToggle = document.getElementById('theme-toggle')
-const themeToggleLabel = themeToggle?.querySelector('.theme-toggle-label')
 const themeColorMeta = document.querySelector('meta[name="theme-color"]')
 
 if (!canvas) {
@@ -415,7 +414,11 @@ const faceData = [
 ]
 
 const materials = faceData.map((face, index) => {
-  const texture = makeFaceTexture(face, index * 7, themes[currentThemeName].face)
+  const texture = makeFaceTexture(
+    face,
+    index * 7,
+    themes[currentThemeName].face
+  )
   return new THREE.MeshStandardMaterial({
     map: texture,
     roughness: themes[currentThemeName].scene.materialRoughness,
@@ -540,11 +543,8 @@ function applyTheme(themeName) {
     themeColorMeta.setAttribute('content', theme.metaThemeColor)
   }
 
-  if (themeToggleLabel) {
-    themeToggleLabel.textContent = theme.toggle.label
-  }
-
   if (themeToggle) {
+    themeToggle.dataset.theme = nextThemeName
     themeToggle.setAttribute('aria-label', theme.toggle.ariaLabel)
     themeToggle.setAttribute('aria-pressed', String(nextThemeName === 'light'))
   }
