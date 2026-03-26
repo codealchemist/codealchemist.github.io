@@ -1,10 +1,11 @@
 {
   "name": "albertomiranda",
-  "version": "2.0.0",
+  "version": "2.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "start": "echo 'Static site: open src/index.html in a browser'",
-    "build": "rm -rf build && mkdir -p build && cp src/index.html src/styles.css src/app.js src/favicon.svg src/screenshot.png CNAME build/",
+    "build": "node scripts/build.js",
     "test": "echo 'No tests configured'"
   },
   "engines": {

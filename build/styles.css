@@ -1,12 +1,144 @@
 :root {
-  --bg-deep: #02070d;
-  --bg-water: #071b2a;
-  --ink: #d7e6f2;
-  --ink-muted: #90aabd;
-  --glass: rgba(4, 15, 24, 0.6);
-  --line: rgba(138, 184, 204, 0.3);
-  --accent: #9ee7f4;
-  --accent-soft: #62b9c8;
+  --bg-deep: #050201;
+  --bg-water: #140904;
+  --ink: #f5e5d4;
+  --ink-muted: #c5a68b;
+  --glass: rgba(24, 12, 8, 0.68);
+  --line: rgba(212, 163, 123, 0.24);
+  --accent: #e0aa78;
+  --accent-soft: #b9784d;
+  --page-bg:
+    radial-gradient(
+      circle at 50% 58%,
+      rgba(112, 65, 38, 0.17) 0%,
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 20% 16%,
+      rgba(157, 92, 58, 0.11) 0%,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(64, 35, 23, 0.2) 0%,
+      transparent 30%
+    ),
+    linear-gradient(180deg, #050201 0%, #090302 52%, #140904 100%);
+  --overlay-sheen: rgba(255, 255, 255, 0.018);
+  --overlay-line: rgba(196, 146, 107, 0.032);
+  --smoke-blend: screen;
+  --smoke-opacity: 0.18;
+  --toggle-bg: rgba(20, 10, 6, 0.78);
+  --toggle-border: rgba(214, 163, 123, 0.18);
+  --toggle-shadow: rgba(0, 0, 0, 0.45);
+  --toggle-text: #f3dec8;
+  --toggle-text-muted: rgba(243, 222, 200, 0.52);
+  --toggle-thumb-bg: rgba(235, 193, 155, 0.12);
+  --toggle-thumb-border: rgba(229, 180, 135, 0.2);
+  --help-bg: rgba(18, 10, 7, 0.44);
+  --help-border: rgba(212, 161, 120, 0.14);
+  --version-bg: rgba(20, 10, 6, 0.62);
+  --version-border: rgba(214, 163, 123, 0.16);
+  --version-text: rgba(245, 229, 212, 0.82);
+  --smoke-a-layer-1: radial-gradient(
+    circle at 28% 44%,
+    rgba(142, 90, 58, 0.34) 0%,
+    transparent 42%
+  );
+  --smoke-a-layer-2: radial-gradient(
+    circle at 70% 56%,
+    rgba(176, 115, 66, 0.24) 0%,
+    transparent 36%
+  );
+  --smoke-a-layer-3: radial-gradient(
+    circle at 52% 42%,
+    rgba(212, 160, 112, 0.06) 0%,
+    transparent 28%
+  );
+  --smoke-b-layer-1: radial-gradient(
+    circle at 72% 38%,
+    rgba(118, 74, 48, 0.24) 0%,
+    transparent 38%
+  );
+  --smoke-b-layer-2: radial-gradient(
+    circle at 34% 72%,
+    rgba(92, 57, 38, 0.18) 0%,
+    transparent 34%
+  );
+  --smoke-b-layer-3: radial-gradient(
+    circle at 54% 22%,
+    rgba(200, 150, 107, 0.04) 0%,
+    transparent 24%
+  );
+}
+
+body[data-theme='light'] {
+  --bg-deep: #ece1d4;
+  --bg-water: #f8eee3;
+  --ink: #2d180e;
+  --ink-muted: #72513d;
+  --glass: rgba(255, 249, 242, 0.86);
+  --line: rgba(164, 109, 72, 0.18);
+  --accent: #9a5b33;
+  --accent-soft: #7f4a2c;
+  --page-bg:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(205, 172, 142, 0.18) 0%,
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 82% 22%,
+      rgba(190, 151, 119, 0.1) 0%,
+      transparent 22%
+    ),
+    linear-gradient(180deg, #fdf8f1 0%, #f4ece2 58%, #ebdfd1 100%);
+  --overlay-sheen: rgba(255, 255, 255, 0.54);
+  --overlay-line: rgba(159, 104, 69, 0.034);
+  --smoke-blend: multiply;
+  --smoke-opacity: 0.09;
+  --toggle-bg: rgba(255, 250, 244, 0.9);
+  --toggle-border: rgba(159, 95, 53, 0.16);
+  --toggle-shadow: rgba(104, 73, 52, 0.14);
+  --toggle-text: #2d180e;
+  --toggle-text-muted: rgba(45, 24, 14, 0.42);
+  --toggle-thumb-bg: rgba(160, 97, 57, 0.1);
+  --toggle-thumb-border: rgba(154, 91, 51, 0.16);
+  --help-bg: rgba(255, 251, 247, 0.62);
+  --help-border: rgba(159, 95, 53, 0.1);
+  --version-bg: rgba(255, 250, 244, 0.78);
+  --version-border: rgba(159, 95, 53, 0.12);
+  --version-text: rgba(45, 24, 14, 0.7);
+  --smoke-a-layer-1: radial-gradient(
+    circle at 22% 40%,
+    rgba(190, 149, 116, 0.1) 0%,
+    transparent 40%
+  );
+  --smoke-a-layer-2: radial-gradient(
+    circle at 64% 58%,
+    rgba(201, 160, 123, 0.06) 0%,
+    transparent 32%
+  );
+  --smoke-a-layer-3: radial-gradient(
+    circle at 50% 50%,
+    rgba(139, 94, 60, 0) 0%,
+    transparent 42%
+  );
+  --smoke-b-layer-1: radial-gradient(
+    circle at 74% 36%,
+    rgba(164, 123, 91, 0.08) 0%,
+    transparent 30%
+  );
+  --smoke-b-layer-2: radial-gradient(
+    circle at 34% 74%,
+    rgba(139, 100, 74, 0.05) 0%,
+    transparent 30%
+  );
+  --smoke-b-layer-3: radial-gradient(
+    circle at 52% 24%,
+    rgba(114, 74, 48, 0) 0%,
+    transparent 34%
+  );
 }
 
 * {
@@ -24,25 +156,10 @@ body {
   font-family: Manrope, 'Segoe UI', sans-serif;
   color: var(--ink);
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 50% 92%,
-      rgba(22, 131, 161, 0.34),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 18% 16%,
-      rgba(61, 99, 126, 0.38),
-      transparent 30%
-    ),
-    radial-gradient(circle at 82% 18%, rgba(28, 71, 95, 0.42), transparent 34%),
-    radial-gradient(circle at 52% 55%, rgba(8, 42, 62, 0.32), transparent 48%),
-    linear-gradient(
-      180deg,
-      #010409 0%,
-      var(--bg-water) 58%,
-      var(--bg-deep) 100%
-    );
+  background: var(--page-bg);
+  transition:
+    color 240ms ease,
+    background 420ms ease;
 }
 
 body::before {
@@ -50,16 +167,119 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 22%),
+    linear-gradient(180deg, var(--overlay-sheen), transparent 22%),
     repeating-linear-gradient(
       180deg,
-      rgba(152, 208, 228, 0.04) 0,
-      rgba(152, 208, 228, 0.04) 1px,
+      var(--overlay-line) 0,
+      var(--overlay-line) 1px,
       transparent 1px,
       transparent 12px
     );
   opacity: 0.35;
   pointer-events: none;
+  transition:
+    background 420ms ease,
+    opacity 240ms ease;
+}
+
+.app-version {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 3;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid var(--version-border);
+  border-radius: 999px;
+  background: var(--version-bg);
+  color: var(--version-text);
+  box-shadow: 0 14px 30px -24px var(--toggle-shadow);
+  font:
+    600 0.72rem/1 'Space Grotesk',
+    sans-serif;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  backdrop-filter: blur(14px);
+  user-select: none;
+  transition:
+    color 220ms ease,
+    background 260ms ease,
+    border-color 260ms ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  width: 10.75rem;
+  padding: 0.25rem;
+  background: var(--toggle-bg);
+  color: var(--toggle-text);
+  box-shadow: 0 16px 40px -24px var(--toggle-shadow);
+  font:
+    600 0.84rem/1 'Space Grotesk',
+    sans-serif;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  backdrop-filter: blur(18px);
+  transition:
+    background-color 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 180ms ease;
+}
+
+.theme-toggle-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+
+.theme-toggle-option {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 2.55rem;
+  color: var(--toggle-text-muted);
+  transition: color 220ms ease;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 0.16rem;
+  left: 0.16rem;
+  bottom: 0.16rem;
+  width: calc(50% - 0.16rem);
+  border: 1px solid var(--toggle-thumb-border);
+  border-radius: 999px;
+  background: var(--toggle-thumb-bg);
+  box-shadow: 0 14px 28px -18px var(--toggle-shadow);
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 240ms ease,
+    border-color 240ms ease;
+}
+
+.theme-toggle[data-theme='dark'] .theme-toggle-option-dark,
+.theme-toggle[data-theme='light'] .theme-toggle-option-light {
+  color: var(--toggle-text);
+}
+
+.theme-toggle[data-theme='dark'] .theme-toggle-thumb {
+  transform: translateX(calc(100% + 0.16rem));
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .viewport {
@@ -90,47 +310,23 @@ body::before {
   inset: -30%;
   pointer-events: none;
   filter: blur(55px);
-  opacity: 0.24;
-  mix-blend-mode: screen;
+  opacity: var(--smoke-opacity);
+  mix-blend-mode: var(--smoke-blend);
+  transition:
+    opacity 320ms ease,
+    background 420ms ease,
+    mix-blend-mode 240ms ease;
 }
 
 .smoke-a {
   background:
-    radial-gradient(
-      circle at 20% 45%,
-      rgba(110, 141, 160, 0.42) 0%,
-      transparent 48%
-    ),
-    radial-gradient(
-      circle at 65% 55%,
-      rgba(72, 130, 150, 0.4) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(99, 177, 197, 0.12) 0%,
-      transparent 42%
-    );
+    var(--smoke-a-layer-1), var(--smoke-a-layer-2), var(--smoke-a-layer-3);
   animation: smokeDriftA 24s ease-in-out infinite alternate;
 }
 
 .smoke-b {
   background:
-    radial-gradient(
-      circle at 70% 40%,
-      rgba(76, 117, 145, 0.35) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 35% 72%,
-      rgba(53, 93, 114, 0.35) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 52% 24%,
-      rgba(103, 196, 220, 0.08) 0%,
-      transparent 32%
-    );
+    var(--smoke-b-layer-1), var(--smoke-b-layer-2), var(--smoke-b-layer-3);
   animation: smokeDriftB 30s ease-in-out infinite alternate;
 }
 
@@ -147,7 +343,16 @@ body::before {
   text-align: center;
   z-index: 2;
   pointer-events: none;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--help-border);
+  border-radius: 999px;
+  background: var(--help-bg);
+  backdrop-filter: blur(16px);
   animation: helpFadeIn 600ms ease-out forwards;
+  transition:
+    color 220ms ease,
+    background 260ms ease,
+    border-color 260ms ease;
 }
 
 .help-mobile {
@@ -169,6 +374,24 @@ body::before {
 }
 
 @media (max-width: 640px) {
+  .app-version {
+    top: 0.9rem;
+    left: 0.9rem;
+    font-size: 0.66rem;
+  }
+
+  .theme-toggle {
+    top: auto;
+    right: 50%;
+    bottom: 1.2rem;
+    width: 11rem;
+    transform: translateX(50%);
+  }
+
+  .theme-toggle:hover {
+    transform: translateX(50%);
+  }
+
   .help-mobile {
     display: block;
   }
