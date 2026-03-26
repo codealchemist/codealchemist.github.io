@@ -1,12 +1,103 @@
 :root {
-  --bg-deep: #02070d;
-  --bg-water: #071b2a;
-  --ink: #d7e6f2;
-  --ink-muted: #90aabd;
-  --glass: rgba(4, 15, 24, 0.6);
-  --line: rgba(138, 184, 204, 0.3);
-  --accent: #9ee7f4;
-  --accent-soft: #62b9c8;
+  --bg-deep: #000;
+  --bg-water: #000;
+  --ink: #f2e2d3;
+  --ink-muted: #c3ac96;
+  --glass: rgba(24, 13, 8, 0.62);
+  --line: rgba(201, 160, 125, 0.28);
+  --accent: #e2a46e;
+  --accent-soft: #cc8a56;
+  --page-bg: #000;
+  --overlay-sheen: rgba(255, 255, 255, 0.015);
+  --overlay-line: rgba(196, 146, 107, 0.045);
+  --smoke-blend: screen;
+  --smoke-opacity: 0.24;
+  --toggle-bg: rgba(24, 13, 8, 0.82);
+  --toggle-border: rgba(226, 164, 110, 0.3);
+  --toggle-shadow: rgba(0, 0, 0, 0.3);
+  --toggle-text: #f2e2d3;
+  --toggle-hover: rgba(52, 30, 19, 0.92);
+  --smoke-a-layer-1: radial-gradient(
+    circle at 20% 45%,
+    rgba(138, 97, 68, 0.42) 0%,
+    transparent 48%
+  );
+  --smoke-a-layer-2: radial-gradient(
+    circle at 65% 55%,
+    rgba(168, 108, 63, 0.36) 0%,
+    transparent 45%
+  );
+  --smoke-a-layer-3: radial-gradient(
+    circle at 50% 50%,
+    rgba(199, 142, 96, 0.12) 0%,
+    transparent 42%
+  );
+  --smoke-b-layer-1: radial-gradient(
+    circle at 70% 40%,
+    rgba(124, 82, 56, 0.35) 0%,
+    transparent 45%
+  );
+  --smoke-b-layer-2: radial-gradient(
+    circle at 35% 72%,
+    rgba(95, 62, 42, 0.35) 0%,
+    transparent 45%
+  );
+  --smoke-b-layer-3: radial-gradient(
+    circle at 52% 24%,
+    rgba(204, 153, 110, 0.08) 0%,
+    transparent 32%
+  );
+}
+
+body[data-theme='light'] {
+  --bg-deep: #f3e7db;
+  --bg-water: #f8efe6;
+  --ink: #2f1a10;
+  --ink-muted: #7d5e49;
+  --glass: rgba(255, 248, 241, 0.78);
+  --line: rgba(167, 112, 74, 0.22);
+  --accent: #9f5f35;
+  --accent-soft: #7f4d2d;
+  --page-bg: linear-gradient(180deg, #fcf7f2 0%, #f5ece3 56%, #ecdfd2 100%);
+  --overlay-sheen: rgba(255, 255, 255, 0.42);
+  --overlay-line: rgba(164, 111, 76, 0.06);
+  --smoke-blend: multiply;
+  --smoke-opacity: 0.16;
+  --toggle-bg: rgba(255, 250, 245, 0.88);
+  --toggle-border: rgba(159, 95, 53, 0.22);
+  --toggle-shadow: rgba(104, 73, 52, 0.12);
+  --toggle-text: #2f1a10;
+  --toggle-hover: rgba(246, 235, 223, 0.96);
+  --smoke-a-layer-1: radial-gradient(
+    circle at 20% 45%,
+    rgba(197, 157, 124, 0.18) 0%,
+    transparent 50%
+  );
+  --smoke-a-layer-2: radial-gradient(
+    circle at 65% 55%,
+    rgba(209, 164, 127, 0.14) 0%,
+    transparent 46%
+  );
+  --smoke-a-layer-3: radial-gradient(
+    circle at 50% 50%,
+    rgba(139, 94, 60, 0.06) 0%,
+    transparent 42%
+  );
+  --smoke-b-layer-1: radial-gradient(
+    circle at 70% 40%,
+    rgba(171, 132, 103, 0.16) 0%,
+    transparent 46%
+  );
+  --smoke-b-layer-2: radial-gradient(
+    circle at 35% 72%,
+    rgba(142, 103, 77, 0.15) 0%,
+    transparent 46%
+  );
+  --smoke-b-layer-3: radial-gradient(
+    circle at 52% 24%,
+    rgba(114, 74, 48, 0.05) 0%,
+    transparent 34%
+  );
 }
 
 * {
@@ -24,25 +115,7 @@ body {
   font-family: Manrope, 'Segoe UI', sans-serif;
   color: var(--ink);
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 50% 92%,
-      rgba(22, 131, 161, 0.34),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 18% 16%,
-      rgba(61, 99, 126, 0.38),
-      transparent 30%
-    ),
-    radial-gradient(circle at 82% 18%, rgba(28, 71, 95, 0.42), transparent 34%),
-    radial-gradient(circle at 52% 55%, rgba(8, 42, 62, 0.32), transparent 48%),
-    linear-gradient(
-      180deg,
-      #010409 0%,
-      var(--bg-water) 58%,
-      var(--bg-deep) 100%
-    );
+  background: var(--page-bg);
 }
 
 body::before {
@@ -50,16 +123,48 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 22%),
+    linear-gradient(180deg, var(--overlay-sheen), transparent 22%),
     repeating-linear-gradient(
       180deg,
-      rgba(152, 208, 228, 0.04) 0,
-      rgba(152, 208, 228, 0.04) 1px,
+      var(--overlay-line) 0,
+      var(--overlay-line) 1px,
       transparent 1px,
       transparent 12px
     );
   opacity: 0.35;
   pointer-events: none;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: var(--toggle-bg);
+  color: var(--toggle-text);
+  box-shadow: 0 16px 40px -24px var(--toggle-shadow);
+  font: 600 0.84rem/1 'Space Grotesk', sans-serif;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  backdrop-filter: blur(18px);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-hover);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .viewport {
@@ -90,47 +195,23 @@ body::before {
   inset: -30%;
   pointer-events: none;
   filter: blur(55px);
-  opacity: 0.24;
-  mix-blend-mode: screen;
+  opacity: var(--smoke-opacity);
+  mix-blend-mode: var(--smoke-blend);
 }
 
 .smoke-a {
   background:
-    radial-gradient(
-      circle at 20% 45%,
-      rgba(110, 141, 160, 0.42) 0%,
-      transparent 48%
-    ),
-    radial-gradient(
-      circle at 65% 55%,
-      rgba(72, 130, 150, 0.4) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(99, 177, 197, 0.12) 0%,
-      transparent 42%
-    );
+    var(--smoke-a-layer-1),
+    var(--smoke-a-layer-2),
+    var(--smoke-a-layer-3);
   animation: smokeDriftA 24s ease-in-out infinite alternate;
 }
 
 .smoke-b {
   background:
-    radial-gradient(
-      circle at 70% 40%,
-      rgba(76, 117, 145, 0.35) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 35% 72%,
-      rgba(53, 93, 114, 0.35) 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 52% 24%,
-      rgba(103, 196, 220, 0.08) 0%,
-      transparent 32%
-    );
+    var(--smoke-b-layer-1),
+    var(--smoke-b-layer-2),
+    var(--smoke-b-layer-3);
   animation: smokeDriftB 30s ease-in-out infinite alternate;
 }
 
@@ -169,6 +250,17 @@ body::before {
 }
 
 @media (max-width: 640px) {
+  .theme-toggle {
+    top: auto;
+    right: 50%;
+    bottom: 1.2rem;
+    transform: translateX(50%);
+  }
+
+  .theme-toggle:hover {
+    transform: translateX(50%);
+  }
+
   .help-mobile {
     display: block;
   }

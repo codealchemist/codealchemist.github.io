@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "echo 'Static site: open src/index.html in a browser'",
-    "build": "rm -rf build && mkdir -p build && cp src/index.html src/styles.css src/app.js src/favicon.svg src/screenshot.png CNAME build/",
+    "build": "rm -rf build && mkdir -p build && cp src/index.html src/styles.css src/app.js src/favicon.svg src/bert.jpg CNAME build/",
     "test": "echo 'No tests configured'"
   },
   "engines": {
