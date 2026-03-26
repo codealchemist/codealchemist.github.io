@@ -1,41 +1,28 @@
-![screenshot](https://albertomiranda.herokuapp.com/screenshot)
+# Alberto Miranda - Personal Website
 
-# Me
+Modern static personal website for Alberto Miranda, software developer focused on web.
 
-This is my personal website.
+## Stack
 
-New releases will include random coolness and proof of concept.
+- HTML
+- CSS
+- JavaScript (vanilla)
+- GitHub Pages for deployment
 
-This is one tiny web playground.
+No runtime server and no third-party dependencies are required.
 
-### ThreeJS + React
+## Local usage
 
-The current version explores using [ThreeJS](https://threejs.org) with [React](https://facebook.github.io/react/).
+Open `src/index.html` directly in your browser.
 
-It displays a simple cube which rotates on the X axis.
+## Build
 
-For any given active face on the cube a small html block is displayed below.
+```bash
+npm run build
+```
 
-The cube can be rotated by dragging it or by using the arrow keys.
+This creates a `build/` directory with the static files needed for deployment.
 
-### Scaffolding
+## Deploy
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-### Development
-
-`npm start`
-
-### Build
-
-`npm run build`
-
-### Test
-
-`npm test`
-
-### Exploring
-
-If you feel like cloning this repo and playing with it, please, be my guest!
-
-Enjoy!
+Deployment is handled automatically by GitHub Actions in `.github/workflows/publish.yml`.

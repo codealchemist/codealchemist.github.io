@@ -2,23 +2,10 @@
   "name": "albertomiranda",
   "version": "0.3.2",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "0.7.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "compression": "^1.6.2",
-    "ejs": "^2.5.2",
-    "express": "^4.14.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "three": "^0.82.1"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "echo 'Static site: open src/index.html in a browser'",
+    "build": "rm -rf build && mkdir -p build && cp src/index.html src/styles.css src/app.js src/favicon.svg src/screenshot.png CNAME build/",
+    "test": "echo 'No tests configured'"
   },
   "engines": {
     "node": "18"
